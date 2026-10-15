@@ -1,0 +1,26 @@
+/* A dish stays the visual anchor while its editable details come forward. */
+.cp-dish-photo-source{position:relative;min-width:0;border-radius:1rem}
+.cp-dish-photo-edit{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;width:100%;padding:.65rem;background:transparent;border-radius:inherit;min-height:44px}
+.cp-dish-photo-edit>span{display:inline-flex;align-items:center;min-height:1.8rem;padding:.3rem .65rem;border-radius:2rem;background:rgba(250,251,245,.94);color:var(--cp-ink);font-size:.67rem;font-weight:650;line-height:1.4;box-shadow:0 3px 12px rgba(19,42,26,.09);transition:background .16s,box-shadow .16s}
+.cp-dish-name-edit{display:inline-block;min-height:44px;padding:0;background:transparent;color:inherit;font:inherit;line-height:inherit;letter-spacing:inherit;text-align:start;border-radius:.35rem;text-wrap:pretty}
+.cp-dish-photo-edit:focus-visible,.cp-dish-name-edit:focus-visible{outline:2px solid var(--cp-forest);outline-offset:4px}
+.cp-dish-photo-edit:active>span{background:#e0ead6;box-shadow:0 1px 4px rgba(19,42,26,.14)}
+.cp-single-dish-form .cp-menu-edit{position:relative;padding:0;margin:0 0 .5rem;background:transparent;border:0;border-radius:0}
+.cp-single-dish-form .cp-menu-edit>legend{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.cp-single-dish-form .cp-menu-photo-editor{grid-template-columns:minmax(0,1fr);gap:1rem;margin:0 0 .25rem}
+.cp-single-dish-form .cp-menu-photo-preview{width:100%;max-width:none;aspect-ratio:16/9;max-height:18rem;border-radius:1rem;background:#e8ebde;box-shadow:inset 0 1px 0 rgba(255,255,248,.65)}
+.cp-single-dish-form .cp-menu-photo-preview>img{height:100%;display:block;object-fit:cover;object-position:center}
+.cp-single-dish-form .cp-menu-photo-preview>img[hidden]{display:none}
+.cp-single-dish-form .cp-menu-photo-controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}
+.cp-single-dish-form .cp-menu-photo-controls>[data-photo-status]{grid-column:1/-1;font-size:.68rem;line-height:1.65}
+.cp-single-dish-form .cp-field small{line-height:1.65}
+.cp-single-dish-form input[name=storePriceCents],.cp-single-dish-form input[name=onlinePriceCents]{font-variant-numeric:tabular-nums}
+.cp-single-dish-form>.cp-button[type=submit]{width:100%;margin-top:.25rem}
+html[lang=th] .cp-dish-name-edit{letter-spacing:0;line-height:1.5}
+html[lang=th] .cp-dish-photo-edit>span{letter-spacing:0;line-height:1.65}
+@media(hover:hover) and (pointer:fine){.cp-dish-photo-edit:hover>span{background:#fffef8;box-shadow:0 4px 16px rgba(19,42,26,.16)}.cp-dish-name-edit:hover{color:var(--cp-forest)}}
+@media(max-width:399px){.cp-single-dish-form .cp-menu-photo-controls{grid-template-columns:minmax(0,1fr)}.cp-dish-photo-edit{padding:.4rem}.cp-dish-photo-edit>span{font-size:.62rem;padding:.25rem .5rem}.cp-single-dish-form .cp-menu-photo-preview{aspect-ratio:4/3}}
+@media(prefers-reduced-motion:reduce){.cp-dish-photo-edit>span{transition:none}}
+@media(prefers-reduced-transparency:reduce){.cp-dish-photo-edit>span{background:#fafbf5}}
+@media(prefers-contrast:more){.cp-dish-photo-edit>span{background:#fff;color:#173d24;outline:1px solid currentColor}.cp-dish-name-edit{text-decoration:underline;text-underline-offset:.15em}}
+@media(forced-colors:active){.cp-dish-photo-edit>span{background:Canvas;color:ButtonText;border:1px solid ButtonText}.cp-dish-photo-edit:focus-visible,.cp-dish-name-edit:focus-visible{outline-color:Highlight}}

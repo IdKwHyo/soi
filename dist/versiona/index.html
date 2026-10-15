@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123a31">
+  <meta name="description" content="Soi Studio gives independent restaurants a shared workspace for business data, campaign decisions, and commercial memory.">
+  <title>Soi Studio — Business workspace</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="/compare.css">
+  <link rel="stylesheet" href="/merchant-flow.css">
+  <link rel="stylesheet" href="/presentation.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#view">Skip to workspace</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="Soi Studio overview"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>Soi<span class="brand-sub">COMMERCIAL STUDIO</span></span></a>
+      <div class="workspace-label" id="workspace-label"></div>
+      <nav id="main-nav" aria-label="Workspace"></nav>
+      <div class="sidebar-foot"><span class="studio-dot"></span><span id="workspace-mode"></span><small id="sidebar-note"></small></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb"><span class="breadcrumb-root" id="breadcrumb-root"></span><span aria-hidden="true">/</span><strong id="current-view"></strong></div>
+        <div class="topbar-actions"><span class="save-status" id="save-status" role="status"></span><label class="language-control"><span class="sr-only" id="language-label">Language</span><select id="language" aria-labelledby="language-label"><option value="en">EN</option><option value="th">ไทย</option></select></label><div id="edition-control"></div></div>
+      </header>
+      <main id="view" tabindex="-1" aria-busy="false"><noscript><style>.loading-scene{display:none}</style><section class="error-scene"><p class="eyebrow">SOI STUDIO</p><h1>Your commercial workspace.</h1><p>Enable JavaScript to open business data, compare campaign approaches and save your work. This workspace needs JavaScript for its calculations and interactions.</p><p lang="th">เปิด JavaScript เพื่อดูข้อมูลร้าน เปรียบเทียบแคมเปญ และบันทึกงาน ระบบใช้ JavaScript ในการคำนวณและทำงาน</p></section></noscript><div class="loading-scene"><p class="eyebrow">SOI STUDIO</p><h1>Your studio is opening.</h1><div class="loading-lines" aria-hidden="true"><i></i><i></i><i></i></div></div></main>
+      <footer class="workspace-footer"><span id="footer-copy"></span><button class="text-button" id="export-workspace"></button></footer>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title"><div class="dialog-head"><span class="eyebrow" id="confirm-eyebrow"></span><button class="icon-button" id="close-confirm" aria-label="Close">×</button></div><h2 id="confirm-title"></h2><p id="confirm-copy"></p><div class="button-row"><button class="button secondary" id="cancel-confirm"></button><button class="button" id="accept-confirm"></button></div></dialog>
+</body>
+</html>

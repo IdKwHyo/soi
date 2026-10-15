@@ -1,0 +1,146 @@
+/* Shared finish: existing ivory, forest and editorial type, with no new chrome. */
+:is(.version-c,.copilot) {
+  font-optical-sizing: auto;
+}
+:is(.version-c,.copilot) :is(h1,h2,h3) {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+:is(.version-c,.copilot) :is(p,li,dd) {
+  text-wrap: pretty;
+}
+.version-c :is(.hero-line,.view-header h1,.flow-header h1),
+.copilot :is(.cp-page-head h1,.cp-order-masthead h1,.cp-ai-intro h1) {
+  max-inline-size: 100%;
+}
+.version-c :is(.metric strong,.candidate-figure,.results-figure strong,.saved-work-list dd,.flow-money-list dd),
+.copilot :is(.cp-order-dish-action>strong,.cp-cart-total strong,.cp-cost-row>[data-label],.cp-menu-row>[data-label],.cp-ai-plan-amount,.cp-tracking-number,.cp-ticket-lines strong) {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.copilot :is(.cp-cart-total strong,.cp-order-dish-action>strong,.cp-ticket-lines strong) {
+  white-space: nowrap;
+}
+.copilot :is(.cp-food-copy,.cp-ai-metric,.cp-ai-batch-meta>div,.cp-order-masthead-copy) {
+  min-inline-size: 0;
+}
+
+/* Supporting information remains readable at its actual rendered size. */
+.copilot :is(.cp-menu-photo-note,.cp-menu-photo-controls .cp-note,.cp-menu-photo-tools .cp-note) {
+  font-size: .75rem;
+  line-height: 1.75;
+}
+.copilot .cp-food-source {
+  font-size: .625rem;
+  line-height: 1.45;
+  letter-spacing: .025em;
+  white-space: normal;
+}
+.copilot :is(.cp-story-plate figcaption,.cp-dish-photo-edit>span) {
+  font-size: .6875rem;
+  line-height: 1.5;
+}
+.copilot .cp-food-empty>span:last-child {
+  font-size: .6875rem;
+  text-align: center;
+  padding-inline: .5rem;
+}
+.copilot .cp-food-copy .cp-order-dish-copy>p {
+  font-size: .6875rem;
+  letter-spacing: .09em;
+}
+.copilot .cp-photo-menu .cp-order-dish-copy>span,
+.copilot .cp-photo-menu .cp-order-dish-action>small,
+.copilot .cp-guest-shell .cp-dish p {
+  font-size: .75rem;
+  line-height: 1.7;
+}
+.copilot :is(.cp-ai-date-note,.cp-ai-confirm>p,.cp-ai-layer-note,.cp-ai-accounting-note,.cp-ai-snapshot,.cp-ai-safety>.cp-ai-snapshot,.cp-ai-metric p,.cp-ai-current>p) {
+  font-size: .75rem;
+  line-height: 1.8;
+}
+.copilot :is(.cp-ai-paper-top>span,.cp-ai-badge,.cp-ai-status,.cp-ai-batch-meta small,.cp-ai-current dt,.cp-ai-message>small) {
+  font-size: .6875rem;
+  line-height: 1.65;
+}
+.copilot .cp-ai-paper-top { flex-wrap: wrap; }
+.copilot .cp-ai-paper-top>span { white-space: normal; }
+.copilot .cp-ai-batch header { flex-wrap: wrap; }
+.copilot .cp-ai-batch-meta { gap: 1rem 1.75rem; }
+.copilot .cp-ai-metric strong { overflow-wrap: anywhere; }
+.version-c :is(.empty-note,.table-caption,.model-note) {
+  font-size: .75rem;
+  line-height: 1.8;
+}
+
+/* Thai vowels and tone marks keep their own spacing instead of Latin tracking. */
+html[lang=th] :is(.version-c,.copilot) :is(h1,h2,h3,.hero-line,.cp-ai-chat-empty) {
+  letter-spacing: 0;
+  line-height: 1.45;
+  word-break: normal;
+}
+html[lang=th] :is(.version-c,.copilot) :is(.eyebrow,.cp-eyebrow,.cp-ai-stage-label,.cp-food-copy .cp-order-dish-copy>p,.cp-food-source,.cp-ai-badge) {
+  letter-spacing: 0;
+  line-height: 1.8;
+}
+html[lang=th] .copilot :is(.cp-button,.cp-link,.cp-field,.cp-note,.cp-menu-photo-note) {
+  line-height: 1.8;
+}
+
+/* Empty, loading and failure states use the same spatial rhythm as real work. */
+.copilot .cp-empty {
+  line-height: 1.85;
+  font-size: .8125rem;
+  color: var(--cp-muted);
+}
+.copilot .cp-empty:not(.cp-shell) {
+  padding: 1.5rem;
+  background: linear-gradient(135deg,rgba(255,255,251,.6),rgba(237,242,231,.35));
+}
+.copilot #cp-main>.cp-shell.cp-empty {
+  padding-block: clamp(3rem,10vh,7rem);
+  background: none;
+}
+.copilot #cp-main>.cp-shell.cp-empty h1 {
+  max-width: 12ch;
+  font-size: clamp(2.5rem,5vw,4.75rem);
+  margin-bottom: 1.5rem;
+}
+.copilot .cp-empty :is(p,.cp-error) { max-width: 48rem; }
+.copilot .cp-empty .cp-eyebrow { margin-bottom: 1.25rem; }
+.copilot .cp-error { overflow-wrap: anywhere; }
+:is(.version-c,.copilot) [aria-busy=true] button[type=submit] { cursor: progress; }
+:is(.version-c,.copilot) progress { accent-color: #365f43; }
+
+@media (max-width: 639px) {
+  .copilot :is(.cp-dialog,.cp-ai-composer) :is(input,textarea,select),
+  .copilot .cp-field :is(input,textarea,select) {
+    font-size: 1rem;
+  }
+  .copilot .cp-menu-photo-controls .cp-field select { font-size: 1rem; }
+  .copilot .cp-photo-menu .cp-order-dish-copy h3 { line-height: 1.27; }
+  .copilot .cp-ai-metric strong { font-size: clamp(1.65rem,6vw,2.1rem); }
+  .copilot .cp-ai-metric { grid-template-columns: minmax(0,1fr) minmax(0,auto); }
+  .copilot .cp-ai-paper dl>div { flex-wrap: wrap; gap: .2rem .75rem; }
+  .copilot .cp-ai-paper dd { margin-left: auto; }
+  .copilot .cp-ai-paper-lines>li { flex-wrap: wrap; gap: .5rem 1rem; }
+  .copilot .cp-ai-paper-lines strong { margin-left: auto; }
+  html[lang=th] .copilot .cp-photo-menu .cp-order-dish-copy h3 { line-height: 1.5; }
+}
+@media (max-width: 359px) {
+  .copilot .cp-ai-metric { display: block; }
+  .copilot .cp-ai-metric strong { margin-block: .3rem; }
+  .copilot .cp-photo-menu .cp-order-dish { column-gap: .75rem; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .copilot .cp-empty:not(.cp-shell) { background: #f1f4eb; }
+}
+@media (prefers-contrast: more) {
+  .copilot .cp-empty:not(.cp-shell) { background: #fff; color: var(--cp-ink); }
+  .copilot .cp-food-source { color: #183d32; background: #fff; }
+}
+@media (forced-colors: active) {
+  .copilot :is(.cp-empty:not(.cp-shell),.cp-food-source) {
+    background: Canvas;
+    color: CanvasText;
+  }
+}

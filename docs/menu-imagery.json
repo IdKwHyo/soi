@@ -1,0 +1,74 @@
+[
+  {
+    "name": "basil-chicken",
+    "prompt": "Use case: photorealistic-natural\nAsset type: square food photograph for a minimal luxury Thai restaurant menu, part of a cohesive six-image set.\nScene/backdrop: warm ivory limestone tabletop, uncluttered, softly mottled natural stone. No backdrop horizon.\nSubject: Thai pad krapao gai: stir-fried chopped chicken with holy basil, a few red chili flecks, steamed jasmine rice and one crisp-edge sunny-side-up fried egg, on a muted sage ceramic shallow plate.\nStyle/medium: photorealistic editorial food photography, natural appetizing food with fine believable texture, restrained high-end restaurant styling.\nComposition/framing: square canvas, slightly elevated three-quarter overhead camera around 55 degrees, entire plate or glass comfortably contained and centered in the middle 60 percent of the canvas, generous quiet tabletop margin all around, safe for a center 4:3 crop. One dish or drink only.\nLighting/mood: soft diffuse window light from upper left, delicate long diffused shadow to lower right, warm quiet afternoon, gentle highlights, realistic subtle depth.\nColor palette: ivory, muted sage and forest green ceramic, natural food colors, soft warm neutrals.\nConstraints: no people, no hands, no text, no letters, no logo, no watermark, no extra objects or cutlery, no decorative plants, no napkins, no collage, no frames. Food must look real, not CGI. No dramatic saturated colors.",
+    "mode": "built-in image_gen",
+    "delivery": {
+      "format": "WebP",
+      "width": 640,
+      "height": 640,
+      "quality": 70
+    },
+    "file": "dist/images/menu/basil-chicken.webp"
+  },
+  {
+    "name": "chicken-rice",
+    "prompt": "Use case: photorealistic-natural\nAsset type: square food photograph for a minimal luxury Thai restaurant menu, part of a cohesive six-image set.\nScene/backdrop: warm ivory limestone tabletop, uncluttered, softly mottled natural stone. No backdrop horizon.\nSubject: Thai khao man gai: neatly sliced poached chicken over fragrant rice, three cucumber slices, tiny cilantro sprig, and a tiny matching sauce cup within the same muted sage ceramic shallow plate.\nStyle/medium: photorealistic editorial food photography, natural appetizing food with fine believable texture, restrained high-end restaurant styling.\nComposition/framing: square canvas, slightly elevated three-quarter overhead camera around 55 degrees, entire plate or glass comfortably contained and centered in the middle 60 percent of the canvas, generous quiet tabletop margin all around, safe for a center 4:3 crop. One dish or drink only.\nLighting/mood: soft diffuse window light from upper left, delicate long diffused shadow to lower right, warm quiet afternoon, gentle highlights, realistic subtle depth.\nColor palette: ivory, muted sage and forest green ceramic, natural food colors, soft warm neutrals.\nConstraints: no people, no hands, no text, no letters, no logo, no watermark, no extra objects or cutlery, no decorative plants, no napkins, no collage, no frames. Food must look real, not CGI. No dramatic saturated colors.",
+    "mode": "built-in image_gen",
+    "delivery": {
+      "format": "WebP",
+      "width": 640,
+      "height": 640,
+      "quality": 70
+    },
+    "file": "dist/images/menu/chicken-rice.webp"
+  },
+  {
+    "name": "fried-rice",
+    "prompt": "Use case: photorealistic-natural\nAsset type: square food photograph for a minimal luxury Thai restaurant menu, part of a cohesive six-image set.\nScene/backdrop: warm ivory limestone tabletop, uncluttered, softly mottled natural stone. No backdrop horizon.\nSubject: Thai vegetable fried rice: separate golden rice grains with diced carrot, green scallions and peas, two cucumber slices and a small lime wedge, on a muted sage ceramic shallow plate.\nStyle/medium: photorealistic editorial food photography, natural appetizing food with fine believable texture, restrained high-end restaurant styling.\nComposition/framing: square canvas, slightly elevated three-quarter overhead camera around 55 degrees, entire plate or glass comfortably contained and centered in the middle 60 percent of the canvas, generous quiet tabletop margin all around, safe for a center 4:3 crop. One dish or drink only.\nLighting/mood: soft diffuse window light from upper left, delicate long diffused shadow to lower right, warm quiet afternoon, gentle highlights, realistic subtle depth.\nColor palette: ivory, muted sage and forest green ceramic, natural food colors, soft warm neutrals.\nConstraints: no people, no hands, no text, no letters, no logo, no watermark, no extra objects or cutlery, no decorative plants, no napkins, no collage, no frames. Food must look real, not CGI. No dramatic saturated colors.",
+    "mode": "built-in image_gen",
+    "delivery": {
+      "format": "WebP",
+      "width": 640,
+      "height": 640,
+      "quality": 70
+    },
+    "file": "dist/images/menu/fried-rice.webp"
+  },
+  {
+    "name": "tom-yum",
+    "prompt": "Use case: photorealistic-natural\nAsset type: square food photograph for a minimal luxury Thai restaurant menu, part of a cohesive six-image set.\nScene/backdrop: warm ivory limestone tabletop, uncluttered, softly mottled natural stone. No backdrop horizon.\nSubject: Thai tom yum goong: warm red-orange translucent broth, two to three realistic curled shrimp, oyster mushrooms, kaffir lime leaves and small chili accents, contained in a muted sage ceramic bowl.\nStyle/medium: photorealistic editorial food photography, natural appetizing food with fine believable texture, restrained high-end restaurant styling.\nComposition/framing: square canvas, slightly elevated three-quarter overhead camera around 55 degrees, entire plate or glass comfortably contained and centered in the middle 60 percent of the canvas, generous quiet tabletop margin all around, safe for a center 4:3 crop. One dish or drink only.\nLighting/mood: soft diffuse window light from upper left, delicate long diffused shadow to lower right, warm quiet afternoon, gentle highlights, realistic subtle depth.\nColor palette: ivory, muted sage and forest green ceramic, natural food colors, soft warm neutrals.\nConstraints: no people, no hands, no text, no letters, no logo, no watermark, no extra objects or cutlery, no decorative plants, no napkins, no collage, no frames. Food must look real, not CGI. No dramatic saturated colors.",
+    "mode": "built-in image_gen",
+    "delivery": {
+      "format": "WebP",
+      "width": 640,
+      "height": 640,
+      "quality": 70
+    },
+    "file": "dist/images/menu/tom-yum.webp"
+  },
+  {
+    "name": "thai-tea",
+    "prompt": "Use case: photorealistic-natural\nAsset type: square food photograph for a minimal luxury Thai restaurant menu, part of a cohesive six-image set.\nScene/backdrop: warm ivory limestone tabletop, uncluttered, softly mottled natural stone. No backdrop horizon.\nSubject: One clear short straight-sided tumbler of authentic orange Thai iced milk tea, visible ice cubes, subtle creamy swirl near the top, gentle real condensation, no straw, on a small muted sage ceramic coaster.\nStyle/medium: photorealistic editorial food photography, natural appetizing food with fine believable texture, restrained high-end restaurant styling.\nComposition/framing: square canvas, slightly elevated three-quarter overhead camera around 55 degrees, entire plate or glass comfortably contained and centered in the middle 60 percent of the canvas, generous quiet tabletop margin all around, safe for a center 4:3 crop. One dish or drink only.\nLighting/mood: soft diffuse window light from upper left, delicate long diffused shadow to lower right, warm quiet afternoon, gentle highlights, realistic subtle depth.\nColor palette: ivory, muted sage and forest green ceramic, natural food colors, soft warm neutrals.\nConstraints: no people, no hands, no text, no letters, no logo, no watermark, no extra objects or cutlery, no decorative plants, no napkins, no collage, no frames. Food must look real, not CGI. No dramatic saturated colors.",
+    "mode": "built-in image_gen",
+    "delivery": {
+      "format": "WebP",
+      "width": 640,
+      "height": 640,
+      "quality": 70
+    },
+    "file": "dist/images/menu/thai-tea.webp"
+  },
+  {
+    "name": "lime-soda",
+    "prompt": "Use case: photorealistic-natural\nAsset type: square food photograph for a minimal luxury Thai restaurant menu, part of a cohesive six-image set.\nScene/backdrop: warm ivory limestone tabletop, uncluttered, softly mottled natural stone. No backdrop horizon.\nSubject: One clear short straight-sided tumbler of fresh sparkling lime soda, pale translucent green liquid, visible ice cubes and natural carbonation, one thin lime wheel inside the glass, gentle real condensation, no straw, on a small muted sage ceramic coaster.\nStyle/medium: photorealistic editorial food photography, natural appetizing food with fine believable texture, restrained high-end restaurant styling.\nComposition/framing: square canvas, slightly elevated three-quarter overhead camera around 55 degrees, entire plate or glass comfortably contained and centered in the middle 60 percent of the canvas, generous quiet tabletop margin all around, safe for a center 4:3 crop. One dish or drink only.\nLighting/mood: soft diffuse window light from upper left, delicate long diffused shadow to lower right, warm quiet afternoon, gentle highlights, realistic subtle depth.\nColor palette: ivory, muted sage and forest green ceramic, natural food colors, soft warm neutrals.\nConstraints: no people, no hands, no text, no letters, no logo, no watermark, no extra objects or cutlery, no decorative plants, no napkins, no collage, no frames. Food must look real, not CGI. No dramatic saturated colors.",
+    "mode": "built-in image_gen",
+    "delivery": {
+      "format": "WebP",
+      "width": 640,
+      "height": 640,
+      "quality": 70
+    },
+    "file": "dist/images/menu/lime-soda.webp"
+  }
+]

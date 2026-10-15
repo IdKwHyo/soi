@@ -1,0 +1,5 @@
+/* The same landscape bridges the page navigation. It never intercepts input. */
+html[data-portal-arrival]::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;background:#e9e8db url('/images/signin-mountains.webp') center/cover no-repeat;transform:scale(1.035);transform-origin:50% 48%;animation:soi-portal-arrival .8s cubic-bezier(.22,.61,.36,1) 1.4s both}
+html[data-portal-arrival=ready]::before{animation-delay:0s}
+@keyframes soi-portal-arrival{0%{opacity:1;transform:scale(1.035)}45%{opacity:.65}100%{opacity:0;transform:scale(1.15)}}
+@media(prefers-reduced-motion:reduce),(forced-colors:active){html[data-portal-arrival]::before{display:none;animation:none}}

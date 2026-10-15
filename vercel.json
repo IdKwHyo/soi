@@ -1,0 +1,44 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm ci",
+  "buildCommand": "node scripts/build-vercel.mjs",
+  "outputDirectory": "vercel-dist",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
+  ],
+  "redirects": [
+    { "source": "/", "destination": "https://soi-studio-preview.karndanai537.chatgpt.site/", "permanent": false },
+    { "source": "/versionc", "destination": "https://soi-studio-preview.karndanai537.chatgpt.site/versionc", "permanent": false },
+    { "source": "/copilot", "destination": "https://soi-studio-preview.karndanai537.chatgpt.site/copilot", "permanent": false },
+    { "source": "/menu", "destination": "https://soi-studio-preview.karndanai537.chatgpt.site/menu", "permanent": false },
+    { "source": "/signin-with-chatgpt", "destination": "https://soi-studio-preview.karndanai537.chatgpt.site/signin-with-chatgpt", "permanent": false },
+    { "source": "/index.html", "destination": "https://soi-studio-preview.karndanai537.chatgpt.site/", "permanent": false },
+    { "source": "/versionc/index.html", "destination": "https://soi-studio-preview.karndanai537.chatgpt.site/versionc", "permanent": false },
+    { "source": "/copilot/index.html", "destination": "https://soi-studio-preview.karndanai537.chatgpt.site/copilot", "permanent": false },
+    { "source": "/versiona", "destination": "https://soi-studio-preview.karndanai537.chatgpt.site/", "permanent": false },
+    { "source": "/versionb", "destination": "https://soi-studio-preview.karndanai537.chatgpt.site/", "permanent": false },
+    { "source": "/versiona/demo", "destination": "/demo", "permanent": true },
+    { "source": "/versionb/demo", "destination": "/demo", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/signin", "destination": "/signin/index.html" },
+    { "source": "/demo", "destination": "/index.html" },
+    { "source": "/versionc/demo", "destination": "/index.html" },
+    { "source": "/copilot/demo", "destination": "/copilot/index.html" },
+    { "source": "/menu/demo", "destination": "/copilot/index.html" },
+    { "source": "/privacy", "destination": "/privacy/index.html" },
+    { "source": "/terms", "destination": "/terms/index.html" },
+    { "source": "/th/privacy", "destination": "/th/privacy/index.html" },
+    { "source": "/th/terms", "destination": "/th/terms/index.html" }
+  ]
+}

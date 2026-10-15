@@ -1,0 +1,490 @@
+/* The studio's mountain, ivory and forest presentation layer. */
+body.version-c {
+  --c-window-radius: 1.75rem;
+  --c-glass-edge: rgba(255, 255, 245, .52);
+  --c-window-shadow: rgba(44, 57, 43, .12);
+  --muted: #4e6054;
+}
+
+/* One continuous atmosphere carries the window's tones through the workspace. */
+.version-c .workspace {
+  background:
+    radial-gradient(ellipse 95% 760px at 100% 550px, rgba(151, 175, 159, .13), transparent 76%),
+    radial-gradient(ellipse 85% 650px at 8% 82%, rgba(207, 191, 158, .12), transparent 78%),
+    var(--paper);
+}
+
+.version-c .c-overview { position: relative; isolation: isolate; }
+.version-c .c-overview::before {
+  content: '';
+  position: absolute;
+  inset: -5rem -1.25rem -2rem;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 86% 500px at 76% 440px, rgba(141, 168, 148, .2), transparent 74%),
+    radial-gradient(ellipse 88% 420px at 28% 740px, rgba(216, 200, 164, .17), transparent 78%),
+    radial-gradient(ellipse 86% 410px at 82% 100%, rgba(172, 192, 177, .12), transparent 76%);
+}
+
+/* Small pools of light continue below the window. They move independently
+   behind the report, never carrying type or controls along with them. */
+.version-c .c-atmosphere {
+  position: absolute;
+  display: block;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .55;
+  border-radius: 50%;
+  contain: paint;
+}
+.version-c .c-atmosphere-sage {
+  inset: 36% 8% auto 12%;
+  height: clamp(260px, 29vw, 410px);
+  background: radial-gradient(ellipse, rgba(168, 192, 170, .19), transparent 70%);
+}
+.version-c .c-atmosphere-sun {
+  inset: auto 14% 2% 4%;
+  height: clamp(230px, 25vw, 370px);
+  background: radial-gradient(ellipse, rgba(220, 195, 141, .21), transparent 69%);
+}
+
+.version-c .hero-scene.has-window {
+  overflow: visible;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: 0;
+  min-height: 450px;
+  margin-bottom: .5rem;
+  padding-block: 1rem 1rem;
+}
+
+.version-c .hero-copy {
+  padding-right: 1.5rem;
+}
+
+.version-c .c-window {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: clamp(390px, 34vw, 470px);
+  min-width: 0;
+  opacity: 1;
+  overflow: visible;
+  border-radius: var(--c-window-radius);
+  z-index: 0;
+  perspective: 1100px;
+  perspective-origin: 45% 50%;
+  isolation: isolate;
+}
+
+/* The blend stays still while the picture moves underneath it. */
+.version-c .c-window::after {
+  display: none;
+}
+
+.version-c .c-window-button {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  cursor: pointer;
+  touch-action: pan-y pinch-zoom;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.version-c .c-window-button::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 5;
+  background:
+    linear-gradient(90deg, var(--paper), rgba(248, 247, 243, .24) 9%, transparent 22%, transparent 89%, var(--paper)),
+    linear-gradient(180deg, var(--paper), transparent 11%, transparent 86%, var(--paper));
+}
+
+.version-c .c-window-button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 6px;
+}
+
+.version-c .c-window-camera {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: inherit;
+  background: #e1e4db;
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+  isolation: isolate;
+}
+
+.version-c .c-window-viewport {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border-radius: inherit;
+  pointer-events: none;
+  perspective: 1100px;
+  perspective-origin: 45% 50%;
+}
+
+/* The feather stays still while the image camera moves. Alpha reveals the
+   actual backdrop, avoiding a paper-colored seam over the new sage wash. */
+@supports (mask-composite: intersect) or (-webkit-mask-composite: source-in) {
+  .version-c .c-window-viewport {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 17%, #000 89%, transparent), linear-gradient(180deg, transparent, #000 11%, #000 58%, rgba(0, 0, 0, .82) 74%, rgba(0, 0, 0, .22) 93%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 17%, #000 89%, transparent), linear-gradient(180deg, transparent, #000 11%, #000 58%, rgba(0, 0, 0, .82) 74%, rgba(0, 0, 0, .22) 93%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
+  .version-c .c-window-button::after { display: none; }
+}
+
+.version-c .c-window-photo {
+  position: absolute;
+  inset: -8%;
+  width: 116%;
+  height: 116%;
+  max-width: none;
+  display: block;
+  object-fit: cover;
+  object-position: 60% 50%;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transform-origin: 56% 52%;
+  backface-visibility: hidden;
+}
+
+/* Identical geometry, different exposure: the landscape itself changes light.
+   This is deliberately separate from the camera's transform timeline. */
+.version-c .c-window-photo-warm {
+  opacity: 0;
+  filter: sepia(.48) saturate(1.42) brightness(.92) contrast(1.08);
+  transition: opacity 1.35s cubic-bezier(.2, .65, .3, 1);
+}
+
+.version-c .c-window-golden,
+.version-c .c-window-caustic,
+.version-c .c-window-spill {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.version-c .c-window-golden {
+  inset: -5%;
+  background:
+    radial-gradient(ellipse at 66% 44%, rgba(255, 212, 133, .66), transparent 60%),
+    linear-gradient(118deg, transparent 28%, rgba(255, 224, 162, .15) 52%, transparent 76%);
+  mix-blend-mode: screen;
+  transition: opacity 1.35s cubic-bezier(.2, .65, .3, 1);
+}
+
+.version-c .c-window-caustic {
+  inset: -30%;
+  background: linear-gradient(111deg, transparent 30%, rgba(255, 248, 218, .1) 40%, rgba(255, 246, 205, .62) 46%, transparent 55%);
+  mix-blend-mode: screen;
+}
+
+.version-c .c-window-spill {
+  inset: 48% -3% -5% 8%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 65% 50%, rgba(220, 167, 77, .2), transparent 69%);
+  transition: opacity 1.5s ease;
+}
+
+.version-c .c-window[data-window-light="on"] .c-window-photo-warm { opacity: 1; }
+.version-c .c-window[data-window-light="on"] .c-window-golden { opacity: .78; }
+.version-c .c-window[data-window-light="on"] .c-window-spill { opacity: 1; }
+.version-c .c-window[data-window-light="on"] .c-window-caustic {
+  animation: c-glass-catch 1.8s cubic-bezier(.2, .65, .3, 1) both;
+}
+
+@keyframes c-glass-catch {
+  0% { transform: translate3d(-22%, 0, 0); opacity: 0; }
+  35% { opacity: .7; }
+  100% { transform: translate3d(22%, 0, 0); opacity: 0; }
+}
+
+.version-c .c-window-haze,
+.version-c .c-window-reflection,
+.version-c .c-window-glint,
+.version-c .c-window-light {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+}
+
+.version-c .c-window-haze {
+  inset: -8%;
+  opacity: .2;
+  background:
+    radial-gradient(ellipse at 70% 51%, rgba(255, 249, 228, .7), transparent 45%),
+    linear-gradient(172deg, transparent 35%, rgba(232, 236, 224, .26) 48%, transparent 66%);
+}
+
+.version-c .c-window-reflection {
+  inset: -35% -30%;
+  opacity: .15;
+  background: linear-gradient(112deg,
+    transparent 28%, rgba(255, 255, 247, .03) 35%,
+    rgba(255, 255, 247, .36) 39%, rgba(255, 255, 247, .03) 43%,
+    transparent 48%, rgba(255, 255, 255, .1) 52%, transparent 60%);
+  mix-blend-mode: screen;
+}
+
+.version-c .c-window-glint {
+  inset: -18% -10%;
+  opacity: .08;
+  background:
+    linear-gradient(108deg, transparent 34%, rgba(255, 250, 230, .55) 34.3%, transparent 34.7%),
+    radial-gradient(ellipse 35% 64% at 36% 26%, rgba(255, 255, 248, .36), transparent 72%);
+  mix-blend-mode: screen;
+}
+
+.version-c .c-window-light {
+  inset: -15%;
+  opacity: 0;
+  background:
+    radial-gradient(ellipse at 88% 8%, rgba(255, 215, 139, .84), transparent 58%),
+    linear-gradient(130deg, rgba(99, 116, 165, .12), rgba(255, 222, 155, .22));
+  mix-blend-mode: soft-light;
+}
+
+/* A fixed material edge gives the moving camera a quiet, physical reference. */
+.version-c .c-window-rim {
+  position: absolute;
+  inset: 7% 4% 6% 12%;
+  display: block;
+  border-radius: 5rem 1.5rem 1.5rem 1.5rem;
+  pointer-events: none;
+  opacity: .32;
+  box-shadow:
+    inset 1px 1px 0 var(--c-glass-edge),
+    inset -1px -1px 0 rgba(46, 58, 37, .1);
+  -webkit-mask-image: linear-gradient(135deg, #000, transparent 64%);
+  mask-image: linear-gradient(135deg, #000, transparent 64%);
+}
+
+.version-c .c-window-shadow {
+  position: absolute;
+  inset: 76% 9% -1% 17%;
+  border-radius: 50%;
+  opacity: .5;
+  background: radial-gradient(ellipse, var(--c-window-shadow), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Only the image changes atmosphere; business information keeps its contrast. */
+.version-c .c-window[data-window-light="on"] .c-window-rim {
+  --c-glass-edge: rgba(255, 240, 201, .8);
+}
+
+.version-c .button,
+.version-c .merchant-step-list button,
+.version-c .nav-item,
+.version-c .flow-step-button {
+  transform-origin: center;
+}
+
+/* A localized specular highlight adds material, without moving the target or
+   adding another surface. Existing mobile nav indicators keep their ::after. */
+.version-c :is(.button, .text-button, .icon-button, .import-file-label, .nav-item, .studio-mode-link, .draft-tabs button, .workflow-list button, .merchant-step-list button, .flow-rail button) {
+  position: relative;
+  isolation: isolate;
+}
+.version-c :is(.button, .text-button, .icon-button, .import-file-label, .nav-item, .studio-mode-link, .draft-tabs button, .workflow-list button, .merchant-step-list button, .flow-rail button)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(ellipse 95px 80px at var(--c-glare-x, 50%) var(--c-glare-y, 30%), rgba(255, 252, 228, .2), transparent 76%),
+    linear-gradient(128deg, transparent 22%, rgba(228, 235, 214, .06) 52%, transparent 80%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 244, .18);
+  transition: opacity .22s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .version-c :is(.button, .text-button, .icon-button, .import-file-label, .nav-item, .studio-mode-link, .draft-tabs button, .workflow-list button, .merchant-step-list button, .flow-rail button):not(:disabled, [aria-disabled="true"]):hover::before { opacity: 1; }
+  .version-c .button:not(.ghost, :disabled):hover {
+    box-shadow: 0 4px 18px rgba(29, 58, 39, .09), inset 0 1px 0 rgba(255, 255, 242, .14);
+  }
+}
+.version-c :is(.button, .nav-item, .studio-mode-link):not(:disabled, [aria-disabled="true"]):focus-visible::before { opacity: .65; }
+.version-c :is(.button, .nav-item, .studio-mode-link):not(:disabled, [aria-disabled="true"]):active::before { opacity: .9; transition-duration: 0s; }
+
+.version-c .merchant-step-list button {
+  padding-inline: .5rem;
+  margin-inline: -.5rem;
+  width: calc(100% + 1rem);
+}
+
+.version-c .metric-ribbon {
+  border-color: rgba(139, 155, 133, .24);
+}
+
+.version-c .metric + .metric {
+  border-color: rgba(139, 155, 133, .2);
+}
+
+.version-c .c-overview .metric-ribbon {
+  position: relative;
+  isolation: isolate;
+  border-block: 0;
+  margin-top: 0;
+}
+.version-c .c-overview .metric-ribbon::before {
+  content: '';
+  position: absolute;
+  inset: -2.5rem -.75rem -2rem;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 72% 62% at 48% 50%, rgba(255, 255, 250, .53), transparent);
+}
+.version-c .c-overview .metric { border: 0; }
+.version-c .c-overview .story-body p { color: var(--muted); }
+
+@media (min-width: 1600px) {
+  .version-c .hero-scene.has-window {
+    min-height: 500px;
+  }
+  .version-c .c-window {
+    height: 480px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1050px) {
+  .version-c .hero-scene.has-window {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    min-height: 0;
+    padding-top: 1rem;
+  }
+  .version-c .hero-copy {
+    padding-right: 0;
+  }
+  .version-c .c-window {
+    height: clamp(320px, 41vw, 400px);
+  }
+}
+
+@media (max-width: 767px) {
+  .version-c .hero-scene.has-window {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    min-height: 0;
+    padding-top: 1.25rem;
+    margin: 0 0 .25rem;
+  }
+  .version-c .hero-copy {
+    padding-right: 0;
+  }
+  .version-c .c-window {
+    position: relative;
+    inset: auto;
+    margin: 0;
+    max-width: none;
+    height: clamp(240px, 62vw, 380px);
+    --c-window-radius: 1.5rem;
+  }
+  .version-c .c-window-photo {
+    object-position: 54% 50%;
+  }
+  .version-c .c-overview::before {
+    inset-inline: -.75rem;
+    background:
+      radial-gradient(ellipse 110% 490px at 82% 480px, rgba(141, 168, 148, .17), transparent 76%),
+      radial-gradient(ellipse 100% 570px at 12% 900px, rgba(216, 200, 164, .14), transparent 78%),
+      radial-gradient(ellipse 100% 470px at 90% 100%, rgba(172, 192, 177, .11), transparent 76%);
+  }
+  .version-c .c-window-button::after {
+    background:
+      linear-gradient(90deg, var(--paper), transparent 12%, transparent 92%, var(--paper)),
+      linear-gradient(180deg, var(--paper), transparent 10%, transparent 86%, var(--paper));
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .version-c .c-window {
+    height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .version-c .c-window-camera,
+  .version-c .c-window-photo,
+  .version-c .c-window-haze,
+  .version-c .c-window-reflection,
+  .version-c .c-window-glint,
+  .version-c .c-atmosphere {
+    transform: none !important;
+    will-change: auto !important;
+  }
+  .version-c .c-window-photo-warm,
+  .version-c .c-window-golden,
+  .version-c .c-window-spill { transition-duration: .15s; }
+  .version-c .c-window-caustic { display: none; animation: none !important; }
+  .version-c :is(.button, .text-button, .icon-button, .import-file-label, .nav-item, .studio-mode-link, .draft-tabs button, .workflow-list button, .merchant-step-list button, .flow-rail button)::before { transition-duration: .12s; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .version-c .c-window-reflection,
+  .version-c .c-window-glint,
+  .version-c .c-window-haze,
+  .version-c .c-window-caustic {
+    display: none;
+  }
+  .version-c .topbar {
+    background: var(--paper);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .version-c .workspace { background: var(--paper); }
+  .version-c .c-overview::before,
+  .version-c .c-atmosphere,
+  .version-c .c-overview .metric-ribbon::before { display: none; }
+}
+
+@media (prefers-contrast: more) {
+  .version-c .c-window-button:focus-visible {
+    outline-width: 3px;
+  }
+  .version-c .metric-ribbon,
+  .version-c .metric + .metric {
+    border-color: var(--muted);
+  }
+  .version-c .workspace { background: var(--paper); }
+  .version-c .c-overview::before,
+  .version-c .c-atmosphere,
+  .version-c .c-overview .metric-ribbon::before { display: none; }
+}
+
+@media (forced-colors: active) {
+  .version-c .c-window-rim,
+  .version-c .c-window-glint,
+  .version-c .c-atmosphere,
+  .version-c .c-window-shadow,
+  .version-c .c-window-button::after {
+    display: none;
+  }
+  .version-c .c-window-button:focus-visible {
+    outline: 2px solid Highlight;
+  }
+  .version-c :is(.button, .text-button, .icon-button, .import-file-label, .nav-item, .studio-mode-link, .draft-tabs button, .workflow-list button, .merchant-step-list button, .flow-rail button)::before { display: none; }
+}

@@ -1,0 +1,64 @@
+@font-face{font-family:Manrope;src:url('/fonts/manrope.woff2') format('woff2');font-weight:200 800;font-display:swap}
+@font-face{font-family:Fraunces;src:url('/fonts/fraunces.woff2') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'IBM Plex Sans Thai';src:url('/fonts/ibm-plex-sans-thai.woff2') format('woff2');font-weight:400;font-display:swap}
+
+.soi-legal-footer,.soi-privacy-dialog,.soi-legal-page{--legal-paper:#f8f7f3;--legal-ink:#192e26;--legal-forest:#123a31;--legal-muted:#58665b;--legal-focus:#276b56;font-family:Manrope,'IBM Plex Sans Thai',sans-serif;font-synthesis:none}
+.soi-legal-footer{position:relative;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0 1.25rem;min-width:0;max-width:1440px;margin:0 auto;padding:.25rem 1.25rem max(1.25rem,env(safe-area-inset-bottom));font-size:13px;line-height:1.65;color:var(--legal-muted)}
+.soi-legal-footer a{display:inline-flex;align-items:center;min-height:44px;max-width:100%;color:inherit;text-decoration:none;text-underline-offset:.25em;overflow-wrap:anywhere;touch-action:manipulation}
+.soi-legal-footer a:hover{text-decoration:underline;color:var(--legal-forest)}
+.version-c>.soi-legal-footer{max-width:none;margin-left:var(--sidebar,222px);padding-inline:clamp(24px,4vw,48px)}
+.version-c .workspace .soi-legal-footer{margin-inline:auto}
+.soi-legal-footer a:focus-visible,.soi-privacy-dialog :is(a,button):focus-visible,.soi-legal-page :is(a,button,summary):focus-visible{outline:2px solid var(--legal-focus);outline-offset:4px;border-radius:3px}
+
+dialog.soi-privacy-dialog{box-sizing:border-box;inset:0;width:min(32rem,calc(100% - 2rem));max-width:none;max-height:calc(100dvh - 2rem);margin:auto;padding:1.75rem;border:0;border-radius:1.25rem;background:var(--legal-paper);color:var(--legal-ink);box-shadow:0 1.5rem 5rem rgba(25,46,38,.18);font-size:15px;line-height:1.8;overflow-y:auto;overscroll-behavior:contain}
+dialog.soi-privacy-dialog::backdrop{background:rgba(25,46,38,.28)}
+.soi-privacy-dialog *{box-sizing:border-box}
+.soi-privacy-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.soi-privacy-dialog h2{font:400 1.8rem/1.2 Fraunces,'IBM Plex Sans Thai',Georgia,serif;letter-spacing:-.025em;margin:.45rem 0 1.75rem;text-wrap:balance}
+.soi-privacy-dialog h3{font:600 14px/1.7 Manrope,'IBM Plex Sans Thai',sans-serif;margin:0 0 .5rem}
+.soi-privacy-dialog p{font:inherit;color:var(--legal-muted);margin:0 0 1.5rem}
+.soi-privacy-dialog button{min-height:44px;max-width:100%;font:600 13px/1.6 Manrope,'IBM Plex Sans Thai',sans-serif;cursor:pointer;touch-action:manipulation;white-space:normal}
+.soi-privacy-dialog .soi-privacy-close{background:transparent;border:0;color:var(--legal-forest);padding:.5rem .25rem;flex-shrink:0}
+.soi-privacy-dialog [data-privacy-off]{border:0;border-radius:.7rem;padding:.7rem 1.25rem;background:var(--legal-forest);color:#fff}
+.soi-privacy-dialog [data-privacy-off]:hover{background:#245443}
+.soi-privacy-policy{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--legal-forest);text-decoration:underline;text-underline-offset:.25em}
+.soi-privacy-actions{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem}
+.soi-privacy-dialog .soi-privacy-status{min-height:1.8em;font-size:13px;margin:1rem 0 0}
+html[lang=th] .soi-privacy-dialog h2{font-family:'IBM Plex Sans Thai',sans-serif;line-height:1.6;letter-spacing:0;font-size:1.5rem}
+
+body.soi-legal-page{box-sizing:border-box;margin:0;min-width:0;min-height:100svh;color:var(--legal-ink);background:var(--legal-paper);font-size:16px;line-height:1.85;overflow-wrap:break-word}
+.soi-legal-page *{box-sizing:border-box}
+.soi-legal-page a{color:var(--legal-forest);text-decoration:underline;text-underline-offset:.25em;touch-action:manipulation}
+.soi-legal-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;max-width:76rem;margin:auto;padding:1.5rem clamp(1.25rem,5vw,4rem)}
+.soi-legal-header a{display:inline-flex;align-items:center;min-height:44px;font-size:13px}
+.soi-legal-header nav{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem 1.25rem}
+.soi-legal-header .soi-legal-brand{font:400 2rem/1 Fraunces,Georgia,serif;letter-spacing:-.05em;text-decoration:none}
+main.soi-legal-main{max-width:48rem;min-height:0;margin:0 auto;padding:3rem 1.5rem 5rem}
+.soi-legal-main h1{font:400 clamp(2.6rem,7vw,4rem)/1.12 Fraunces,'IBM Plex Sans Thai',Georgia,serif;letter-spacing:-.04em;margin:0 0 1.5rem;text-wrap:balance}
+.soi-legal-main h2{font:500 1.4rem/1.5 Fraunces,'IBM Plex Sans Thai',Georgia,serif;letter-spacing:-.015em;margin:3rem 0 1rem;scroll-margin-top:1.5rem}
+.soi-legal-main h3{font:600 1rem/1.7 Manrope,'IBM Plex Sans Thai',sans-serif;margin:1.75rem 0 .5rem}
+.soi-legal-main p{margin:0 0 1.25rem}
+.soi-legal-main :is(ul,ol){padding-left:1.3rem;margin:0 0 1.5rem}
+.soi-legal-main li{margin:.5rem 0}
+.soi-legal-main dt{font-weight:600;margin-top:1rem}
+.soi-legal-main dd{margin:.35rem 0 1.25rem}
+.soi-legal-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--legal-muted)}
+.soi-legal-meta{font-size:13px;color:var(--legal-muted)}
+.soi-legal-intro{font-size:1.0625rem;color:var(--legal-muted)}
+.soi-legal-notice{padding:1.25rem 1.5rem;background:#edf0e8;border-radius:.85rem;margin:1.5rem 0;color:#314c3a}
+.soi-legal-toc{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;margin:2rem 0}
+.soi-legal-related{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:3rem}
+.soi-legal-related a{display:inline-flex;align-items:center;min-height:44px;font-size:14px}
+.soi-legal-toc a,.soi-legal-main [data-soi-legal=choices]{display:inline-flex;min-height:44px;align-items:center;font-size:14px}
+.soi-legal-main table{width:100%;border-collapse:collapse;font-size:14px}
+.soi-legal-main :is(th,td){text-align:left;vertical-align:top;padding:.75rem .5rem;border-bottom:1px solid #d8dfd4;overflow-wrap:anywhere}
+.soi-legal-main th{font-weight:600}
+.soi-legal-main details{margin:1.5rem 0}
+.soi-legal-main summary{min-height:44px;cursor:pointer;font-weight:600}
+.soi-legal-page .soi-legal-skip{position:absolute;z-index:5;top:.5rem;left:.5rem;padding:.5rem 1rem;background:var(--legal-paper);transform:translateY(-160%)}
+.soi-legal-page .soi-legal-skip:focus{transform:none}
+html[lang=th] .soi-legal-main :is(h1,h2){font-family:'IBM Plex Sans Thai',sans-serif;letter-spacing:0;line-height:1.55}
+html[lang=th] .soi-legal-main h1{font-size:clamp(2rem,6vw,3rem)}
+@media(max-width:767px){.version-c>.soi-legal-footer{margin-left:0}.soi-legal-footer{font-size:12px;gap:0 1rem}main.soi-legal-main{padding-top:2rem}}
+@media(max-width:400px){dialog.soi-privacy-dialog{padding:1.25rem}.soi-privacy-heading{gap:.5rem}.soi-privacy-dialog h2{font-size:1.6rem}.soi-legal-footer{column-gap:1rem}}
+@media(forced-colors:active){dialog.soi-privacy-dialog{border:1px solid CanvasText;background:Canvas;color:CanvasText}.soi-privacy-dialog [data-privacy-off]{border:1px solid ButtonText;background:ButtonFace;color:ButtonText}.soi-legal-footer a,.soi-privacy-dialog a,.soi-legal-page a{color:LinkText}.soi-privacy-dialog p,.soi-legal-meta,.soi-legal-intro,.soi-legal-kicker{color:CanvasText}.soi-legal-notice{border:1px solid CanvasText}}

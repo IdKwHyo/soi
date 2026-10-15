@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f6">
+  <meta name="description" content="Enter the Soi Studio merchant copilot demo. No account or password required.">
+  <title>Sign in — Soi Studio</title>
+  <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body class="signin-page">
+  <a class="signin-skip" href="#signin-main" data-en="Skip to sign in" data-th="ข้ามไปเข้าสู่ระบบ">Skip to sign in</a>
+
+  <div class="signin-atmosphere" aria-hidden="true">
+    <div class="signin-atmosphere-image" data-signin-background></div>
+    <div class="signin-atmosphere-wash"></div>
+  </div>
+
+  <div class="signin-shell">
+    <header class="signin-header">
+      <a class="signin-brand" href="/demo#overview" aria-label="Soi Studio demo" data-en-aria="Soi Studio demo" data-th-aria="เดโม Soi Studio">
+        <span class="signin-brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Soi<span class="signin-brand-caption">STUDIO</span></span>
+      </a>
+      <label class="signin-language">
+        <span class="signin-sr-only" data-en="Language" data-th="ภาษา">Language</span>
+        <select id="signin-language" name="language">
+          <option value="en">EN</option>
+          <option value="th">ไทย</option>
+        </select>
+      </label>
+    </header>
+
+    <main id="signin-main" class="signin-main" tabindex="-1">
+      <div class="signin-copy" data-signin-copy>
+        <p class="signin-eyebrow" data-en="Your merchant copilot" data-th="ผู้ช่วยสำหรับร้านของคุณ">Your merchant copilot</p>
+        <h1 data-en="Sign in." data-th="เข้าสู่ระบบ">Sign in.</h1>
+        <p class="signin-intro" data-en="Enter your workspace." data-th="เข้าสู่พื้นที่ทำงานของคุณ">Enter your workspace.</p>
+
+        <div class="signin-actions">
+          <form class="signin-form" action="/demo#overview" method="get" autocomplete="off" data-signin-form aria-describedby="signin-preview-note">
+            <label class="signin-field" for="signin-username">
+              <span data-en="Username" data-th="ชื่อผู้ใช้">Username</span>
+              <input id="signin-username" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="128" aria-describedby="signin-preview-note">
+            </label>
+            <label class="signin-field" for="signin-password">
+              <span data-en="Password" data-th="รหัสผ่าน">Password</span>
+              <input id="signin-password" type="password" autocomplete="off" maxlength="128" aria-describedby="signin-preview-note">
+            </label>
+          <button class="signin-enter" type="submit" data-signin-enter aria-describedby="signin-preview-note">
+            <span data-en="Sign in" data-th="เข้าสู่ระบบ">Sign in</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 12h14m-5.5-5.5 5.5 5.5-5.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          </form>
+          <p id="signin-preview-note" class="signin-preview-note" data-en="* Demo only—enter anything. No real sign-in needed." data-th="* เดโมเท่านั้น—กรอกอะไรก็ได้ ไม่ต้องเข้าสู่ระบบจริง">* Demo only—enter anything. No real sign-in needed.</p>
+          <a class="signin-direct" href="/demo#overview" data-signin-skip data-en="Open demo directly" data-th="เปิดเดโมโดยตรง">Open demo directly</a>
+        </div>
+
+        <p class="signin-status" data-signin-status role="status" aria-live="polite" aria-atomic="true"></p>
+      </div>
+
+      <div class="signin-portrait-stage">
+        <div class="signin-portrait-shadow" aria-hidden="true"></div>
+        <figure class="signin-scene" data-signin-scene>
+          <div class="signin-photo-clip">
+            <img class="signin-photo" src="/images/signin-mountains.webp" width="960" height="1440" alt="Soft morning light over a quiet mountain valley" data-en-alt="Soft morning light over a quiet mountain valley" data-th-alt="แสงเช้าอ่อน ๆ เหนือหุบเขาอันเงียบสงบ" fetchpriority="high" decoding="async" data-signin-photo>
+          </div>
+          <span class="signin-glass" aria-hidden="true" data-signin-glass></span>
+          <span class="signin-glass-edge" aria-hidden="true"></span>
+        </figure>
+      </div>
+    </main>
+
+    <footer class="signin-footer">
+      <span class="signin-scroll-note"><span class="signin-scroll-line" aria-hidden="true"></span><span data-en="Scroll to look around" data-th="เลื่อนเพื่อชมบรรยากาศ">Scroll to look around</span></span>
+      <span class="signin-footer-name">Soi Studio</span>
+    </footer>
+  </div>
+</body>
+</html>
