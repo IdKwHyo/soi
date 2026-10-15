@@ -1,0 +1,12 @@
+node_modules
+.env
+.env.*
+!.env.example
+.cache/
+.wrangler/
+build/
+dist/server/
+dist/.openai/
+dist/fonts/
+*.tar.gz
+.DS_Store
